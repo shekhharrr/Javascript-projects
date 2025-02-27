@@ -1,0 +1,53 @@
+<html>
+<head></head>
+<body>
+
+<h2>Changing Background color</h2>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<script>
+
+//function that give us color code
+function randomColor(){
+    
+    const hex='0123456789ABCDEF';
+    let color='#';
+    
+    for(let i=0;i<6;i++){
+        color += hex[Math.floor(Math.random()*16)];
+    }
+    return color;
+    
+}
+
+let iId; //global variable
+
+//start button function
+function start(){
+    if(!iId){
+    iId=setInterval(()=>{
+        document.body.style.backgroundColor=randomColor()
+    },1000)
+    }
+}
+
+//stop button function
+function stop(){
+    if(iId){
+    clearInterval(iId)
+    }
+    iId=null;
+}
+
+//joint start function to the start button
+document.querySelector('#start').addEventListener('click',start)
+
+//joint stop function to the stop button
+
+document.querySelector('#stop').addEventListener('click',stop)
+
+</script>
+
+</body>
+</html>
