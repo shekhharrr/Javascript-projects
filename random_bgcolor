@@ -8,7 +8,7 @@
 
 <script>
 
-//function that give us color code
+//function that give us random color code
 function randomColor(){
     
     const hex='0123456789ABCDEF';
